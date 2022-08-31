@@ -5,9 +5,15 @@
 function populateList() {
     const containerRow = document.querySelector(".row");
     const newDiv = document.createElement("div");
-    newDiv.className= "card-body";
-    const list = document.createElement("ul");
+    newDiv.className= "card";
+    newDiv.style.margin = "24px auto";
+    newDiv.style.borderRadius = ".25em";
+    newDiv.style.width =" 98%"
+    const list = document.createElement("ol");
     list.className = "unprocessedList";
+    list.style.marginTop = "16px";
+    list.style.marginBottom = "0px";
+       
 
     //append elements
     containerRow.appendChild(newDiv);
@@ -22,8 +28,8 @@ function populateList() {
         /* console.log("RED - " + nsURL + ", Project Name: " + projectName + " - "+ pendingData); */
         //create DOM li
         let link = document.createElement('li');
-        link.innerHTML += "<a href=' "+nsURL+"'> "+"RED - Project Name: "+" "+projectName+" "+" <br> Pending: "+" "+pendingData+"</a>";
-        //append element to UL
+        link.innerHTML += "<p>"+"Project Name: "+"<a href=' "+nsURL+"'> "+projectName+"</a>"+" Pending: "+" "+pendingData+"</p>";
+        //append element to Ordered List
         list.appendChild(link);
     }
     
@@ -35,8 +41,8 @@ function populateList() {
         const pendingData = withPendingYellow[y].firstElementChild.children[3].children[12].innerText;
         //create DOM li
         let link = document.createElement('li');
-        link.innerHTML += "<a href=' "+nsURL+"'> "+"YELLOW - Project Name: "+" "+projectName+" "+" <br> Pending: "+" "+pendingData+"</a>";
-        //append element to UL
+        link.innerHTML += "<p>"+"Project Name: "+"<a href=' "+nsURL+"'> "+projectName+"</a>"+" Pending: "+" "+pendingData+"</p>";
+        //append element to Ordered List
         list.appendChild(link);
     }
 }
